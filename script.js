@@ -20,7 +20,7 @@ function launchFlower() {
   flower.className = "flying-flower";
   flower.src = flowerImages[Math.floor(Math.random() * flowerImages.length)];
   flower.alt = "";
-  const size = 18 + Math.random() * 25; // Hoa nhỏ: khoảng 18–43 px
+  const size = 18 + Math.random() * 25; 
   flower.style.width = `${size}px`;
   flower.style.height = `${size}px`;
   flower.style.left = `${Math.random() * 100}%`;
@@ -32,7 +32,7 @@ function launchFlower() {
 }
 
 function startFlowerShower() {
-  // Mỗi lần bấm tạo một đợt hoa dày, sau đó tiếp tục bay lên trong vài giây.
+ 
   for (let i = 0; i < 38; i++) {
     setTimeout(launchFlower, i * 55);
   }
