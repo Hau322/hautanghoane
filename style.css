@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script:wght@400..700&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+NO:wght@100..400&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+* { box-sizing: border-box; }
+:root { --pink: #ffe7e9; --ink: #777575; --line: #8d8989; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  font-family: dancing-script-font, sans-serif;
+  min-height: 100vh; overflow-x: hidden; display: grid; place-items: center;
+  padding: 18px; background: #ffe7e9 url("assets/background.jpg") center / cover fixed no-repeat;
+  color: var(--ink); font-family: "Quicksand", sans-serif;
+}
+
+.greeting-card {
+  position: relative; isolation: isolate; width: min(100%, 460px); min-height: min(760px, calc(100svh - 36px));
+  padding: 100px 22px 30px; display: flex; align-items: center; flex-direction: column;
+  border: 1px solid rgba(255,255,255,.75); background: rgba(255,231,233,.82);
+  box-shadow: 0 10px 35px rgba(146,93,100,.08); overflow: hidden;
+}
+.headline { z-index: 1; text-align: center; margin-top: 0; }
+.headline h1 {
+    font-family: "Dancing Script", cursive;
+    font-size: 30px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 1.2;
+    color: #777575;
+}
+.date { margin: 2px 0 12px; font: 500 23px/1.1 "Patrick Hand", cursive; color: #333; letter-spacing: 2px; }
+.cat-photo { z-index: 1; display: block; width: 118px; height: 118px; object-fit: cover; }
+.actions { z-index: 2; display: flex; justify-content: center; gap: 42px; margin-top: 23px; }
+.pill-button {
+  min-width: 104px; padding: 10px 16px; border: 1.5px solid #999; border-radius: 30px;
+  color: #656161; background: rgba(255,255,255,.94); font: italic 600 15px "Patrick Hand", cursive;
+  box-shadow: 0 1px 1px rgba(0,0,0,.04); cursor: pointer; transition: transform .18s ease, background .18s ease;
+}
+.pill-button:hover { transform: translateY(-2px); background: #fff; }
+.pill-button:active { transform: scale(.96); }
+.hint { z-index: 2; min-height: 20px; margin: 13px 0 0; font-size: 12px; text-align: center; }
+.share-panel {
+  z-index: 3; width: min(100%, 340px); margin-top: 10px; padding: 13px; border: 1px solid #aaa;
+  border-radius: 14px; background: rgba(255,255,255,.96); color: #5f5b5b; font-size: 12px;
+}
+.share-row { display: flex; gap: 8px; margin-top: 8px; }
+.share-row input { min-width: 0; flex: 1; border: 1px solid #aaa; border-radius: 18px; padding: 8px 10px; color: #555; }
+.share-row button { border: 1px solid #999; border-radius: 18px; padding: 6px 14px; background: white; font: 600 14px "Quicksand", sans-serif; cursor: pointer; }
+#copyStatus { margin: 6px 0 0; }
+.decor { position: absolute; z-index: 0; user-select: none; pointer-events: none; }
+.decor-peach { font-size: 33px; filter: saturate(.8); }
+.peach-one { top: 16%; left: 6%; transform: rotate(-14deg); }
+.peach-two { top: 44%; right: 7%; transform: rotate(12deg); }
+.bunny { color: #333; font-size: 37px; font-family: sans-serif; -webkit-text-stroke: .6px #333; }
+.bunny-one { top: 14%; right: 9%; }
+.bunny-two { top: 37%; left: 12%; }
+.bunny-three { bottom: 10%; right: 18%; }
+#flowerLayer { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 10; }
+.flying-flower { position: absolute; bottom: -90px; object-fit: contain; opacity: 0; animation: float-up var(--duration, 4.5s) linear forwards; will-change: transform, opacity; }
+@keyframes float-up {
+  0% { transform: translate3d(0, 0, 0) rotate(0deg) scale(.75); opacity: 0; }
+  8% { opacity: .98; }
+  85% { opacity: .95; }
+  100% { transform: translate3d(var(--drift, 20px), -115vh, 0) rotate(var(--spin, 240deg)) scale(1); opacity: 0; }
+}
+@media (max-width: 520px) {
+  body { padding: 0; background-attachment: scroll; }
+  .greeting-card { width: 100%; min-height: 100svh; border: 0; padding-top: max(28px, 5vh); }
+  .actions { gap: 26px; margin-top: 22px; }
+  .cat-photo { width: 118px; height: 118px; }
+  .desktop-break { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

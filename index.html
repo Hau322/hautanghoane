@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffe7e9">
+  <title>Chúc mừng ngày Phụ nữ Việt Nam 20/10</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="greeting-card">
+    
+
+    <header class="headline">
+      <h1>Chúc mừng ngày phụ<br class="desktop-break"> nữ Việt Nam</h1>
+      <p class="date">20/10</p>
+    </header>
+
+    <img class="cat-photo" src="assets/cat-rose.jpg" alt="Chú mèo tặng một bông hồng">
+
+    <section class="actions" aria-label="Tặng hoa và chia sẻ">
+      <button id="receiveBtn" class="pill-button" type="button">Nhận hoa</button>
+      <button id="shareBtn" class="pill-button" type="button">Chia sẻ</button>
+    </section>
+
+    <p class="hint" id="hint" aria-live="polite"></p>
+
+    <section id="sharePanel" class="share-panel" hidden>
+      <label for="shareLink">Gửi món quà này cho người bạn muốn tặng nhé ♡</label>
+      <div class="share-row">
+        <input id="shareLink" type="text" readonly>
+        <button id="copyBtn" type="button">Copy</button>
+      </div>
+      <p id="copyStatus" aria-live="polite"></p>
+    </section>
+  </main>
+  <div id="flowerLayer" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>
